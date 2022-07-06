@@ -9,7 +9,7 @@ for line in open('requirements.txt'):
     if not li.startswith('#'):
         requirements.append(line.rstrip())
 
-VERSION = (0, 0, 0)  # (1, 0, 7, 'dev0')
+VERSION = (0, 0, 1)  # (1, 0, 7, 'dev0')
 __version__ = '.'.join(map(str, VERSION))
 
 setup(
@@ -37,7 +37,7 @@ setup(
 
     # Entry
     # Our packages live under src but src is not a package itself
-    package_dir={'': 'ufesp'},
+    #package_dir={'': 'ufesp'},
 
     # Quando são diversos módulos...
     packages=find_packages('ufesp', exclude=['test']),
