@@ -27,7 +27,10 @@ Optei por utilizar o [*site* oficial](https://legislacao.fazenda.sp.gov.br/Pagin
 
 ```python
 # Pega Tabela
-df_ufesp = get_ufesp()
+df_ufesp = ufesp.get_table()
+
+# Pega Valor para um dado dia
+get_ufesp(dia='2021-11-15')
 ```
 
 <br>
