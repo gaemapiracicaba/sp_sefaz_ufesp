@@ -12,6 +12,7 @@ prune test # Remove all files under directories test
 
 # Excluí
 exclude ufesp/*.ipynb
+exclude scripts/*.ipynb
 #exclude */*/run.py
 #exclude */run.py
 
