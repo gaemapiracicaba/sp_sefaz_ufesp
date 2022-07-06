@@ -26,6 +26,8 @@ Optei por utilizar o [*site* oficial](https://legislacao.fazenda.sp.gov.br/Pagin
 ### Como Usar?
 
 ```python
+import ufesp
+
 # Pega Tabela
 df_ufesp = ufesp.get_table()
 
