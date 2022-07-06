@@ -37,6 +37,10 @@ get_ufesp(dia='2021-11-15')
 
 <br>
 
+Para testar fiz um [Google Colab](https://colab.research.google.com/drive/1NwV9mGUlPOlYFcZ6-ieEXL4HVPShO928?usp=sharing)
+
+<br>
+
 ----
 
 ### Útlima Atualização?
