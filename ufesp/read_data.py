@@ -11,13 +11,6 @@ data_path = project_path / 'ufesp' / 'data'
 data_path.mkdir(exist_ok=True)
 
 
-
-
-
-
-
-
-
 def get_table():
     df = pd.read_csv(
         data_path / 'ufesp.csv',
@@ -34,12 +27,6 @@ def get_ufesp(dia):
     # json
     mask = (df['data_inicio'] <= dia) & (df['data_fim'] >= dia)
     return df.loc[mask].to_dict('records')[0]
-
-
-
-
-
-
 
 
 if __name__ == '__main__':
