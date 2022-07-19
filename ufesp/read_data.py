@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-from datetime import datetime
 import pandas as pd
 from pathlib import Path
+from datetime import datetime
 
 
 def get_table():
