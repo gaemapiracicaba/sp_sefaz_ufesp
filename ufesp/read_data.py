@@ -32,6 +32,9 @@ def get_ufesp_from_date(date):
 
 
 def get_ufesp_from_year(year):
+    # Adjust Year
+    year = int(year)
+
     # Get Dataframe
     df = get_table()
 
