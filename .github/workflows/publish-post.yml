@@ -1,0 +1,75 @@
+name: publish
+
+on:
+  push:
+    branches: [ main ]
+
+
+jobs:
+  build_1_post:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Pushes POST to another repository
+        id: push_directory        
+        uses: cpina/github-action-push-to-another-repository@v1.4.1
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+        with:
+          source-directory: 'docs/post'
+          user-name: michelmetran
+          user-email: michelmetran@gmail.com
+
+          destination-github-username: 'gaemapiracicaba'
+          destination-repository-name: 'gaemapiracicaba.github.io'
+          target-branch: master
+          target-directory: /_posts/ufesp
+          commit-message: See ORIGIN_COMMIT from $GITHUB_REF   
+
+
+  build_2_imgs:
+    runs-on: ubuntu-latest
+    needs: [build_1_post]
+    if: always()
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Pushes IMGS to another repository
+        id: push_directory
+        uses: cpina/github-action-push-to-another-repository@v1.4.1
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+        with:
+          source-directory: 'docs/imgs'
+          user-name: michelmetran
+          user-email: michelmetran@gmail.com
+
+          destination-github-username: 'gaemapiracicaba'
+          destination-repository-name: 'gaemapiracicaba.github.io'
+          target-branch: master
+          target-directory: /assets/ufesp/imgs
+          commit-message: See ORIGIN_COMMIT from $GITHUB_REF
+
+
+  build_3_data:
+    runs-on: ubuntu-latest
+    needs: [build_1_post, build_2_imgs]
+    if: always()
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Pushes DATA to another repository
+        id: push_directory
+        uses: cpina/github-action-push-to-another-repository@v1.4.1
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+        with:
+          source-directory: 'ufesp/data'
+          user-name: michelmetran
+          user-email: michelmetran@gmail.com
+
+          destination-github-username: 'gaemapiracicaba'
+          destination-repository-name: 'gaemapiracicaba.github.io'
+          target-branch: master
+          target-directory: /assets/ufesp/data
+          commit-message: See ORIGIN_COMMIT from $GITHUB_REF
