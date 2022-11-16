@@ -43,6 +43,9 @@ Para testar fiz um [Google Colab](https://colab.research.google.com/drive/1NwV9m
 
 ---
 
-### Útlima Atualização?
+### Última Atualização?
 
 O código foi desenvolvido em julho de 2022 e será necessário atualizar uma vez ao ano. Como não é atualizado com frequência, faz-se necessário fazer essa atualização manualmente, por meio do _script_ _get_data.ipynb_.
+
+
+> Atualizado em 16.11.2022

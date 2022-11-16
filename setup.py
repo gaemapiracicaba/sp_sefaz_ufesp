@@ -1,15 +1,19 @@
-from setuptools import setup, find_packages
+"""
+Setup
+"""
 
-with open('README.md', 'r') as f:
+from setuptools import setup
+
+with open('README.md', 'r', encoding='utf-8') as f:
     long_description = f.read()
 
 requirements = []
-for line in open('requirements.txt'):
+for line in open('requirements.txt', encoding='utf-8'):
     li = line.strip()
     if not li.startswith('#'):
         requirements.append(line.rstrip())
 
-VERSION = (0, 0, 14)  # (1, 0, 7, 'dev0')
+VERSION = (0, 0, 15)  # (1, 0, 7, 'dev0')
 __version__ = '.'.join(map(str, VERSION))
 
 setup(
@@ -30,22 +34,17 @@ setup(
         'Natural Language :: Portuguese',
         'Intended Audience :: Developers',
     ],
-
     # Qual python? e packages?
     python_requires='>=3',
     install_requires=requirements,
-
     # Entry
     # Our packages live under src but src is not a package itself
-    #package_dir={'': 'ufesp'},
-
+    # package_dir={'': 'ufesp'},
     # Quando são diversos módulos...
-    #packages=find_packages('ufesp', exclude=['test']),
+    # packages=find_packages('ufesp', exclude=['test']),
     packages=['ufesp'],
-
     # Apenas um módulo...
     # py_modules=['decreto_estadual_8468'],  # Quando se trata apenas de um módulo
-
     # Dados
     include_package_data=True,
     package_data={'': ['data/ufesp.csv']},

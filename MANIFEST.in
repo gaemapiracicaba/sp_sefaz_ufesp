@@ -16,8 +16,8 @@ exclude scripts/*.ipynb
 #exclude */*/run.py
 #exclude */run.py
 
-global-exclude run.py
-global-exclude data/tab_Pa*
+#global-exclude run.py
+#global-exclude data/tab_Pa*
 
 # Excluí
 global-exclude __pycache__
